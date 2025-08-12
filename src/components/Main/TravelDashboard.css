@@ -1,0 +1,1115 @@
+/* Recommendations.css */
+:root {
+  --accent-color: #ff7a59;
+  --bg: var(--bg-primary);
+  --card-bg: var(--card-bg);
+  --text-dark: var(--text-primary);
+  --text-light: var(--text-secondary);
+  --border-radius: 16px;
+  --transition-fast: 0.2s;
+  --transition-slow: 0.4s;
+  --font-main: 'Inter', 'Segoe UI', sans-serif;
+  --card-border: 1px solid var(--border-color);
+  --box-shadow: var(--shadow-medium);
+}
+
+body {
+  background: var(--bg);
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+  color: var(--text-dark);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.travel-dashboard {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.travel-dashboard::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(77, 171, 247, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(81, 207, 102, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  color: var(--accent-color);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.weather {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 1rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-light);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.weather:hover {
+  box-shadow: var(--shadow-medium);
+  border-color: var(--accent-color);
+}
+
+.weather p,
+.weather .weather-item {
+  font-size: 1.1rem;
+  margin: 0;
+  text-align: center;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 1rem;
+  width: 100%;
+  max-width: 250px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-light);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+.weather p:hover,
+.weather .weather-item:hover {
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-medium);
+}
+
+.weather .weather-item strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-bottom: 0.25rem;
+}
+.weather .weather-item input {
+ width: 200px;
+}
+
+.weather img {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  box-shadow: var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+.weather img:hover {
+  transform: scale(1.05);
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-medium);
+}
+
+.weather img.city-photo {
+  grid-column: 1 / span 2;
+  width: 400px;
+  height: 400px;
+  max-width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-medium);
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.weather img.city-photo:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-heavy);
+  border-color: var(--accent-color);
+}
+
+.city-form,
+.radius-form {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+input[type="text"],
+input[type="number"] {
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 350px;
+
+
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  margin: 50px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--input-focus);
+  box-shadow: 0 0 0 2px rgba(77, 171, 247, 0.2);
+}
+
+button {
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: var(--shadow-light);
+  font-family: 'Inter', sans-serif;
+}
+
+button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-medium);
+}
+
+button:hover {
+  background: #e66548;
+}
+
+.attractions {
+  margin-top: 3rem;
+}
+
+.attractions h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--accent-color);
+}
+
+.attractions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.attraction-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-light);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  min-height: 200px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.attraction-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--accent-color);
+}
+
+.attraction-card:hover {
+  transform: translateY(-5px);
+}
+
+.photos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 4px;
+  padding: 0.5rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  position: relative;
+  z-index: 1;
+}
+
+.photos-container img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.info {
+  padding: 1rem 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.info strong {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+  color: #000;
+}
+
+.info div {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.attraction-actions {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 10;
+}
+
+.favorite-attraction-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.favorite-attraction-btn:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.attraction-card {
+  position: relative;
+}
+
+.spinner-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+  color: var(--text-light);
+  padding: 1rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ccc;
+  border-top-color: var(--accent-color);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.fact {
+  font-style: italic;
+  text-align: center;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+/* Адаптивность для спиннера */
+@media (max-width: 768px) {
+  .spinner-wrap {
+    margin: 1.5rem;
+    padding: 0.75rem;
+  }
+  
+  .spinner {
+    width: 36px;
+    height: 36px;
+    border-width: 3px;
+  }
+  
+  .fact {
+    max-width: 400px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .spinner-wrap {
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+  
+  .spinner {
+    width: 32px;
+    height: 32px;
+    border-width: 3px;
+  }
+  
+  .fact {
+    max-width: 300px;
+    font-size: 0.9rem;
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.clear-btn {
+  background: #f87171;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  margin-left: 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+.clear-btn:hover {
+  background: #ef4444;
+}
+
+.more-btn {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 2rem auto;
+  min-width: 200px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: var(--shadow-light);
+  font-family: 'Inter', sans-serif;
+}
+
+.more-btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.more-btn:hover {
+  background: #e66548;
+}
+
+/* Адаптивность для кнопок */
+@media (max-width: 768px) {
+  .more-btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.95rem;
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .more-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    min-width: 160px;
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 360px) {
+  .more-btn {
+    padding: 0.5rem 0.875rem;
+    font-size: 0.85rem;
+    min-width: 140px;
+  }
+}
+.favorites-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+#favorite-select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: white;
+  border: 1px solid #d1d5db;
+}
+.add-fav-btn {
+  margin-top: 0.5rem;
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.add-fav-btn:hover {
+  background: #059669;
+}
+/* Рекомендации — общий стиль */
+.recommendations {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-light);
+  animation: fadeInUp 0.5s ease;
+}
+
+.recommendations:hover {
+  box-shadow: var(--shadow-medium);
+  border-color: var(--accent-color);
+}
+
+.recommendations h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #1e293b;
+  text-align: center;
+}
+
+.recommendations-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Карточка рекомендации */
+.recommendation-item {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-light);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 180px;
+}
+
+.recommendation-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--accent-color);
+}
+
+
+.recommendation-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.recommendation-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Адрес */
+.recommendation-item .address {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+
+/* Плашка "Нет рекомендаций" */
+.no-recommendations {
+  padding: 1rem;
+  text-align: center;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.error-container {
+  text-align: center;
+  padding: 2rem;
+}
+.error-container button {
+  margin-top: 1rem;
+  background-color: #4caf50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+.attractions-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Адаптивность для контейнера поиска */
+@media (max-width: 768px) {
+  .attractions-container {
+    gap: 0.875rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .attractions-container {
+    gap: 0.75rem;
+  }
+}
+.search-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  width: 300px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  padding: 0 10px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.search-btn {
+  width: 100px;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  background: var(--accent-color);
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background var(--transition-fast);
+}
+
+.search-btn:hover {
+  background: #e66548;
+}
+
+/* Адаптивность для поиска */
+@media (max-width: 768px) {
+  .search-btn-container {
+    gap: 20px;
+  }
+  
+  .search-input {
+    width: 250px;
+    height: 36px;
+    font-size: 0.95rem;
+  }
+  
+  .search-btn {
+    width: 90px;
+    height: 36px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-btn-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .search-input {
+    width: 100%;
+    max-width: 280px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+  
+  .search-btn {
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .search-input {
+    height: 36px;
+    font-size: 0.85rem;
+  }
+  
+  .search-btn {
+    height: 36px;
+    font-size: 0.85rem;
+  }
+}
+.p-4{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Стили для фильтра типов мест */
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  border: var(--card-border);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.filter-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.filter-icon {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+}
+
+.filter-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  white-space: nowrap;
+}
+
+.place-type-select {
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: #fff;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  min-width: 200px;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+}
+
+.place-type-select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(255, 122, 89, 0.1);
+}
+
+.place-type-select:hover {
+  border-color: #d0d0d0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.place-type-select option {
+  padding: 0.5rem;
+  font-size: 1rem;
+  background: #fff;
+  color: var(--text-dark);
+}
+
+/* Анимация при изменении фильтра */
+.place-type-select.filter-changed {
+  animation: filterChange 0.3s ease-in-out;
+}
+
+@keyframes filterChange {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Полная адаптивность для всех устройств */
+
+/* Большие планшеты и маленькие десктопы */
+@media (max-width: 1200px) {
+  .travel-dashboard {
+    padding: 1.5rem;
+    max-width: 1000px;
+  }
+  
+  .attractions-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .title {
+    font-size: 2.4rem;
+  }
+}
+
+/* Планшеты */
+@media (max-width: 1024px) {
+  .travel-dashboard {
+    padding: 1.25rem;
+  }
+  
+  .title {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .weather {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .weather img.city-photo {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .attractions-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+  
+  .attraction-card {
+    border-radius: 12px;
+  }
+  
+  .info {
+    padding: 0.875rem 1rem;
+  }
+  
+  .info strong {
+    font-size: 1.1rem;
+  }
+}
+
+/* Средние планшеты */
+@media (max-width: 768px) {
+  .travel-dashboard {
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .weather {
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .weather img.city-photo {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .attractions-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+  
+  .attraction-card {
+    border-radius: 10px;
+  }
+  
+  .photos-container {
+    padding: 0.375rem;
+  }
+  
+  .photos-container img {
+    height: 80px;
+  }
+  
+  .info {
+    padding: 0.75rem 0.875rem;
+  }
+  
+  .info strong {
+    font-size: 1rem;
+  }
+  
+  .info div {
+    font-size: 0.875rem;
+  }
+  
+  .more-btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.95rem;
+  }
+  
+  /* Фильтр */
+  .filter-container {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+  
+  .filter-header {
+    justify-content: center;
+  }
+  
+  .filter-label {
+    font-size: 0.95rem;
+  }
+  
+  .place-type-select {
+    min-width: 100%;
+    width: 100%;
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 480px) {
+  .travel-dashboard {
+    padding: 0.75rem;
+  }
+  
+  .title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .weather {
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .weather p,
+  .weather .weather-item {
+    font-size: 1rem;
+    padding: 0.875rem;
+  }
+  
+  .weather img.city-photo {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .attractions-grid {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+  
+  .attraction-card {
+    border-radius: 8px;
+  }
+  
+  .photos-container {
+    padding: 0.25rem;
+  }
+  
+  .photos-container img {
+    height: 70px;
+  }
+  
+  .info {
+    padding: 0.625rem 0.75rem;
+  }
+  
+  .info strong {
+    font-size: 0.95rem;
+  }
+  
+  .info div {
+    font-size: 0.8rem;
+  }
+  
+  .more-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  /* Фильтр на мобильных */
+  .filter-container {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+  
+  .filter-label {
+    font-size: 0.9rem;
+  }
+  
+  .place-type-select {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.95rem;
+  }
+  
+  /* Поиск */
+  input[type="text"],
+  input[type="number"] {
+    width: 100%;
+    max-width: none;
+  }
+  
+  .search-btn-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .search-input {
+    width: 100%;
+    max-width: none;
+  }
+  
+  .search-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 360px) {
+  .travel-dashboard {
+    padding: 0.5rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .weather {
+    padding: 0.875rem;
+  }
+  
+  .weather img.city-photo {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .attractions-grid {
+    gap: 0.75rem;
+  }
+  
+  .info {
+    padding: 0.5rem 0.625rem;
+  }
+  
+  .info strong {
+    font-size: 0.9rem;
+  }
+  
+  .info div {
+    font-size: 0.75rem;
+  }
+  
+  .more-btn {
+    padding: 0.5rem 0.875rem;
+    font-size: 0.85rem;
+  }
+  
+  /* Фильтр */
+  .filter-container {
+    padding: 0.875rem;
+  }
+  
+  .filter-label {
+    font-size: 0.85rem;
+  }
+  
+  .place-type-select {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Ландшафтная ориентация на мобильных */
+@media (max-width: 768px) and (orientation: landscape) {
+  .travel-dashboard {
+    padding: 0.75rem;
+  }
+  
+  .title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .weather {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+  }
+  
+  .weather img.city-photo {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .attractions-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+/* Высокие экраны (iPhone SE и подобные) */
+@media (max-width: 375px) and (min-height: 667px) {
+  .travel-dashboard {
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 1.6rem;
+  }
+}
+
+/* Планшеты в портретной ориентации */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .attractions-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  
+  .weather img.city-photo {
+    width: 350px;
+    height: 350px;
+  }
+}

@@ -1,0 +1,131 @@
+@import "leaflet/dist/leaflet.css";
+
+:root {
+  /* Light theme variables */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --text-muted: #adb5bd;
+  --border-color: #dee2e6;
+  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-heavy: 0 8px 16px rgba(0, 0, 0, 0.2);
+  --accent-color: #007bff;
+  --accent-hover: #0056b3;
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --error-color: #dc3545;
+  --card-bg: #ffffff;
+  --card-border: #e9ecef;
+  --input-bg: #ffffff;
+  --input-border: #ced4da;
+  --input-focus: #80bdff;
+  --theme-toggle-bg: #ffffff;
+  --theme-toggle-color: #333333;
+}
+
+[data-theme="dark"] {
+  /* Elegant Dark theme variables */
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-tertiary: #404040;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-muted: #808080;
+  --border-color: #404040;
+  --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --shadow-heavy: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --accent-color: #4dabf7;
+  --accent-hover: #74c0fc;
+  --success-color: #51cf66;
+  --warning-color: #ffd43b;
+  --error-color: #ff6b6b;
+  --card-bg: #2d2d2d;
+  --card-border: #404040;
+  --input-bg: #2d2d2d;
+  --input-border: #404040;
+  --input-focus: #4dabf7;
+  --theme-toggle-bg: #2d2d2d;
+  --theme-toggle-color: #ffffff;
+  --gradient-primary: linear-gradient(135deg, #4dabf7 0%, #74c0fc 100%);
+  --gradient-secondary: linear-gradient(135deg, #51cf66 0%, #69db7c 100%);
+  --gradient-accent: linear-gradient(135deg, #ffd43b 0%, #fcc419 100%);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Elegant animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subtleGlow {
+  0%, 100% {
+    box-shadow: var(--shadow-light);
+  }
+  50% {
+    box-shadow: var(--shadow-medium);
+  }
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Apply animations to elements */
+.attraction-card,
+.recommendation-item,
+.weather {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.attraction-card:hover,
+.recommendation-item:hover {
+  animation: subtleGlow 2s ease-in-out infinite;
+}
+
+.title {
+  animation: gentleFloat 4s ease-in-out infinite;
+}
+
+#root {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+}

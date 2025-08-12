@@ -1,0 +1,136 @@
+
+.info-page {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: "Segoe UI", sans-serif;
+  color: #1f2937;
+  background: #f9fafb;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+.info-page > * {
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.info-page > *:nth-child(1) { animation-delay: 0.1s; }
+.info-page > *:nth-child(2) { animation-delay: 0.2s; }
+.info-page > *:nth-child(3) { animation-delay: 0.3s; }
+.info-page > *:nth-child(4) { animation-delay: 0.4s; }
+.info-page > *:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.back-button {
+  background: linear-gradient(to right, #4f46e5, #6366f1);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 2px 5px rgba(79, 70, 229, 0.3);
+}
+.back-button:hover {
+  background: linear-gradient(to right, #4338ca, #4f46e5);
+  transform: scale(1.05);
+}
+
+
+.info-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-address {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+.info-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+
+.info-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.info-gallery img,
+.info-banner img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.info-gallery img:hover {
+  transform: scale(1.05);
+}
+
+.info-banner img {
+  height: 300px;
+  margin-bottom: 1rem;
+}
+
+
+.info-meta {
+  background: #eef2ff;
+  padding: 1rem;
+  border-left: 5px solid #6366f1;
+  border-radius: 12px;
+  margin-top: 2rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.info-meta h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: #1e3a8a;
+}
+
+.info-meta ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-meta li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.info-meta a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* Мини-карта */
+.mini-map {
+  margin-top: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
