@@ -2,26 +2,26 @@
   "name": "Travel Dashboard",
   "short_name": "TravelApp",
   "description": "Интерактивная панель для путешествий с информацией о городах, погоде и достопримечательностях",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ff7a59",
   "orientation": "portrait-primary",
   "icons": [
-  {
-    "src": "icon-192x192.png",
-    "sizes": "192x192",
-    "type": "image/png",
-    "purpose": "any maskable"
-  },
-  {
-    "src": "icon-512x512.png",
-    "sizes": "512x512",
-    "type": "image/png",
-    "purpose": "any maskable"
-  }
-],
+    {
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
   "categories": ["travel", "weather", "maps"],
   "lang": "ru",
   "dir": "ltr"
-} 
+}
